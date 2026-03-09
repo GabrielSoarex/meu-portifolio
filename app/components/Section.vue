@@ -1,12 +1,14 @@
 <template>
-  <section :id="id" class="max-w-6xl mx-auto py-24 px-6">
-    <h2 class="text-3xl font-bold mb-12 text-blue-400">{{ title }}</h2>
+  <section :id="id" class="mx-auto max-w-6xl px-6 py-24">
+    <h2 class="mb-12 text-3xl font-bold text-primary">
+      {{ title }}
+    </h2>
     <div>
       <slot />
     </div>
   </section>
 </template>
 
-<script setup>
-defineProps({ title: String, id: String })
+<script setup lang="ts">
+defineProps<{ title: string; id: string }>()
 </script>

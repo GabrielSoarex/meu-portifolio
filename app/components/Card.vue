@@ -1,13 +1,17 @@
 <template>
   <div
-    class="p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:-translate-y-2 hover:shadow-blue-500/30 transition-all duration-300"
+    class="rounded-2xl border border-content/10 bg-surface-elevated/50 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 focus-within:ring-2 focus-within:ring-primary/30"
   >
-    <h3 class="font-semibold text-lg">{{ title }}</h3>
-    <p class="text-sm text-gray-400 mb-4">{{ subtitle }}</p>
+    <h3 class="text-lg font-semibold text-content">
+      {{ title }}
+    </h3>
+    <p v-if="subtitle" class="mb-4 text-sm text-content-muted">
+      {{ subtitle }}
+    </p>
     <slot />
   </div>
 </template>
 
-<script setup>
-defineProps({ title: String, subtitle: String });
+<script setup lang="ts">
+defineProps<{ title: string; subtitle?: string }>()
 </script>
